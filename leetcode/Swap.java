@@ -11,7 +11,7 @@ public class Swap {
         int[] array ={1,2,3,4,5,6,7,8};
         System.out.println(Arrays.toString(array));
         swapArray(array,2,6);
-        System.out.println(Arrays.toString(array));
+        System.out.println("Swapped array is" + Arrays.toString(array));
 
     }
     static int[] swapNum(int a, int b) {

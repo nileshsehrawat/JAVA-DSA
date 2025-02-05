@@ -1,12 +1,12 @@
 import java.util.Scanner;
 
 public class Switch {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         String day = in.next();
-        //Switch(1);
+        // Switch(1);
 
-        switch(day){
+        switch (day) {
             case "1":
                 System.out.println("MONDAY");
                 break;
@@ -25,6 +25,7 @@ public class Switch {
             default:
                 System.out.println("SUNDAY");
         }
+        in.close();
 
     }
 }
