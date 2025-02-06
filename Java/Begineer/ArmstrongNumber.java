@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Armstrong {
+public class ArmstrongNumber {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();// input 153 output true

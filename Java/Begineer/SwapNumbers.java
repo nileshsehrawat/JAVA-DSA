@@ -1,4 +1,4 @@
-public class Swap {
+public class SwapNumbers {
     public static void main(String[] args) {
         int a = 456;
         int b = 348;
@@ -6,7 +6,7 @@ public class Swap {
         int temp = a;
         a = b;
         b = temp;
-        //System.out.println("Swapped a is "+a+" Swapped b is "+b);
-        System.out.println(a+" "+b);
+        // System.out.println("Swapped a is "+a+" Swapped b is "+b);
+        System.out.println(a + " " + b);
     }
 }

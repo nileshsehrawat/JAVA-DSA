@@ -1,7 +1,10 @@
 
+// Order Agnostic Binary Search only works on a sorted array (ascending or descending)
+// It is a modified version of Binary Search which works on both ascending and descending sorted arrays.
+// The drawback is that it will not work on unsorted arrays.
 public class OrderAgnosticBinarySearch {
     public static void main(String[] args) {
-        int[] array = { 9, 8, 7, 6, 5, 4, 3, 2, 1 };
+        int[] array = { 1, 8, 7, 6, 5, 4, 3, 2, 9 };
         int target = 7;
         int result = orderAgnosticBS(array, target);
         System.out.println(result);
