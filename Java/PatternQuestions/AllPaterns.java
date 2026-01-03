@@ -4,7 +4,7 @@ package Java.PatternQuestions;
 
 public class AllPaterns {
   public static void main(String[] args){
-  reverseAlphabetsPattern(5);
+  concentricNumberPattern(5);
     // System.out.println("hello");
   }
 
@@ -227,4 +227,103 @@ public class AllPaterns {
       System.out.println();
     }
   }
+  private static void hollowHourglassPattern(int rows){
+    for(int i= rows ; i>= 1; i--){
+      for(int j= 0; j< i; j++){
+        System.out.print("*");
+      }
+
+      for(int k= 0; k< 2* (rows-i); k++){
+        System.out.print(" ");
+      }
+
+      for(int l= i; l>=1; l--){
+        System.out.print("*");
+      }
+      System.out.println();
+    }
+    for(int p= 2; p<= rows; p++){
+      for(int j= 1; j<= p; j++){
+        System.out.print("*");
+      }
+
+      for (int k = 0; k < 2 * (rows - p); k++){
+        System.out.print(" ");
+      }
+
+      for (int l = 1; l <= p; l++) {
+            System.out.print("*");
+        }
+      System.out.println();
+    }
+  }
+  private static void butterflyPattern(int rows){
+    for (int i = 1; i <= rows; i++) {
+
+        for (int j = 1; j <= i; j++) {
+            System.out.print("*");
+        }
+
+        for (int j = 1; j <= 2 * (rows - i); j++) {
+            System.out.print(" ");
+        }
+
+        for (int j = 1; j <= i; j++) {
+            System.out.print("*");
+        }
+
+        System.out.println();
+    }
+
+    for (int i = rows - 1; i >= 1; i--) {
+
+        for (int j = 1; j <= i; j++) {
+            System.out.print("*");
+        }
+
+        for (int j = 1; j <= 2 * (rows - i); j++) {
+            System.out.print(" ");
+        }
+
+        for (int j = 1; j <= i; j++) {
+            System.out.print("*");
+        }
+        System.out.println();
+    }
+  }
+  private static void hollowSquarePattern(int n) {
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= n; j++) {
+
+            // border condition
+            if (i == 1 || i == n || j == 1 || j == n) {
+                System.out.print("*");
+            } else {
+                System.out.print(" ");
+            }
+        }
+        System.out.println();
+    }
+  }
+  private static void concentricNumberPattern(int n) {
+    int size = 2 * n - 1;
+
+    for (int i = 0; i < size; i++) {
+        for (int j = 0; j < size; j++) {
+
+            int top = i;
+            int left = j;
+            int right = size - 1 - j;
+            int bottom = size - 1 - i;
+
+            int minDist = Math.min(
+                Math.min(top, bottom),
+                Math.min(left, right)
+            );
+
+            System.out.print((n - minDist) + " ");
+        }
+        System.out.println();
+    }
+}
 }
