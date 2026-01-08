@@ -1,9 +1,12 @@
 package Java.Maths;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class BasicMaths {
 
   public static void main(String[] args) {
-    int result = reverseNumber(1345);
+    boolean result = isPrime(10);
     System.out.println(result);
   }
 
@@ -51,18 +54,63 @@ public class BasicMaths {
   }
 
   static boolean isArmstrong(int n) {
-        int original = n;
-        int sum = 0;
+      int original = n;
+      int sum = 0;
+      while (n > 0) {
+          int rem = n % 10;
+          n /= 10;
+          sum = sum + rem * rem * rem;
+      }
+      if (sum == original) {
+          return true;
+      }
+      return false;
+  }
 
-        while (n > 0) {
-            int rem = n % 10;
-            n /= 10;
-            sum = sum + rem * rem * rem;
-        }
-        if (sum == original) {
-            return true;
-        }
-        return false;
-
+  public static int findGcd(int a,  int b){
+    // int gcd = 1;
+    for( int i = 1; i<= Math.min(a,b); i++){
+      if(a % i == 0 && b % i ==0){
+        // gcd = i;
+        return i;
+      }
     }
+    // return gcd;
+    return 1;
+  }
+
+  public static int euclideanAlgorithmGcd(int a, int b){
+    while(a> 0 && b> 0){
+      if(a> b){
+        a= a% b;
+      }else{
+        b= b% a;
+      }
+    }
+    if (a == 0){
+      return b;
+    }
+    return a;
+  }
+
+  public static List<Integer> findAllDivisors(int n){
+    List<Integer> res = new ArrayList<>();
+
+    for(int i = 1; i<= n; i++){
+      if(n % i == 0){
+        res.add(i);
+      }
+    }
+    return res;
+  }
+
+  public static boolean isPrime(int n){
+    int count = 0;
+    for(int i = 1; i<= n; i++){
+      if (n % i == 0){
+        count++;
+      }
+    }
+    return count == 2;
+  }
 }
