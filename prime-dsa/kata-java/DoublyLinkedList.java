@@ -150,4 +150,27 @@ public class DoublyLinkedList<T> {
   public int size() {
     return length; // return current size
   }
+
+  // --------reverse----------
+  public void reverse() {
+
+    Node<T> curr = head;
+    Node<T> temp = null;
+
+    while (curr != null) {
+
+      // swap next and previous
+      temp = curr.prev;
+      curr.prev = curr.next;
+      curr.next = temp;
+
+      // move forward(which is actually backward now)
+      curr = curr.prev;
+    }
+
+    // swap head and tail
+    temp = head;
+    head = tail;
+    tail = temp;
+  }
 }
